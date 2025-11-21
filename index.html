@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAJVET HACKING TOOLS | Gmail Dot Trick Generator</title>
+  <title>𓊗𓊗𓊗 RAJVET HACKING SUITE 𓊗𓊗𓊗</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -12,13 +12,12 @@
       --secondary: #8a2be2;
       --dark: #0a0a0a;
       --dark-light: #1a1a1a;
-      --light: #f0f0f0;
       --accent: #ff0080;
-      --text-dark: #ffffff;
-      --text-light: #000000;
       --terminal: #00ff41;
       --hacker-green: #00ff00;
       --matrix-green: #00cc66;
+      --cyber-blue: #0080ff;
+      --neon-pink: #ff00ff;
       --border-radius: 8px;
       --transition: all 0.3s ease;
     }
@@ -32,172 +31,311 @@
 
     body {
       background-color: var(--dark);
-      color: var(--text-dark);
+      color: var(--terminal);
       line-height: 1.6;
       min-height: 100vh;
-      transition: var(--transition);
       padding: 0;
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.05) 0%, transparent 20%);
       position: relative;
       overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
+    .cyber-grid {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background: 
-        linear-gradient(transparent 95%, rgba(0, 255, 136, 0.03) 95%),
-        linear-gradient(90deg, transparent 95%, rgba(0, 255, 136, 0.03) 95%);
-      background-size: 20px 20px;
+        linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+        linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
       pointer-events: none;
-      z-index: -1;
+      z-index: -3;
     }
 
-    .matrix-bg {
+    .scan-line {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      pointer-events: none;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      box-shadow: 0 0 20px var(--primary);
+      animation: scan 3s linear infinite;
       z-index: -2;
-      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    @keyframes scan {
+      0% { top: 0%; opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { top: 100%; opacity: 0.7; }
+    }
+
+    .glitch-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch-text::before,
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch-text::before {
+      left: 2px;
+      text-shadow: -2px 0 var(--neon-pink);
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+
+    .glitch-text::after {
+      left: -2px;
+      text-shadow: -2px 0 var(--cyber-blue);
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim2 5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim {
+      0% { clip: rect(42px, 9999px, 44px, 0); }
+      5% { clip: rect(12px, 9999px, 59px, 0); }
+      10% { clip: rect(48px, 9999px, 29px, 0); }
+      15% { clip: rect(42px, 9999px, 73px, 0); }
+      20% { clip: rect(63px, 9999px, 27px, 0); }
+      25% { clip: rect(34px, 9999px, 55px, 0); }
+      30% { clip: rect(86px, 9999px, 73px, 0); }
+      35% { clip: rect(20px, 9999px, 20px, 0); }
+      40% { clip: rect(26px, 9999px, 60px, 0); }
+      45% { clip: rect(25px, 9999px, 66px, 0); }
+      50% { clip: rect(57px, 9999px, 98px, 0); }
+      55% { clip: rect(5px, 9999px, 46px, 0); }
+      60% { clip: rect(82px, 9999px, 31px, 0); }
+      65% { clip: rect(54px, 9999px, 27px, 0); }
+      70% { clip: rect(28px, 9999px, 99px, 0); }
+      75% { clip: rect(45px, 9999px, 69px, 0); }
+      80% { clip: rect(23px, 9999px, 85px, 0); }
+      85% { clip: rect(54px, 9999px, 84px, 0); }
+      90% { clip: rect(45px, 9999px, 47px, 0); }
+      95% { clip: rect(37px, 9999px, 20px, 0); }
+      100% { clip: rect(4px, 9999px, 91px, 0); }
+    }
+
+    @keyframes glitch-anim2 {
+      0% { clip: rect(65px, 9999px, 100px, 0); }
+      5% { clip: rect(52px, 9999px, 74px, 0); }
+      10% { clip: rect(79px, 9999px, 85px, 0); }
+      15% { clip: rect(75px, 9999px, 5px, 0); }
+      20% { clip: rect(67px, 9999px, 61px, 0); }
+      25% { clip: rect(14px, 9999px, 79px, 0); }
+      30% { clip: rect(1px, 9999px, 66px, 0); }
+      35% { clip: rect(86px, 9999px, 30px, 0); }
+      40% { clip: rect(23px, 9999px, 98px, 0); }
+      45% { clip: rect(85px, 9999px, 72px, 0); }
+      50% { clip: rect(71px, 9999px, 75px, 0); }
+      55% { clip: rect(2px, 9999px, 48px, 0); }
+      60% { clip: rect(30px, 9999px, 16px, 0); }
+      65% { clip: rect(59px, 9999px, 50px, 0); }
+      70% { clip: rect(41px, 9999px, 62px, 0); }
+      75% { clip: rect(2px, 9999px, 82px, 0); }
+      80% { clip: rect(47px, 9999px, 73px, 0); }
+      85% { clip: rect(3px, 9999px, 27px, 0); }
+      90% { clip: rect(26px, 9999px, 55px, 0); }
+      95% { clip: rect(42px, 9999px, 97px, 0); }
+      100% { clip: rect(38px, 9999px, 49px, 0); }
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 1rem;
     }
 
-    header {
-      text-align: center;
+    .system-header {
+      background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(138, 43, 226, 0.1));
+      border: 1px solid var(--primary);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
       margin-bottom: 2rem;
-      padding: 2rem 1rem;
       position: relative;
       overflow: hidden;
-      border-bottom: 1px solid var(--primary);
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
     }
 
-    .logo {
+    .system-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      animation: headerGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes headerGlow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    .logo-container {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
+      gap: 1.5rem;
       margin-bottom: 1rem;
     }
 
-    .logo-icon {
-      font-size: 2.5rem;
+    .hacker-symbols {
+      font-size: 2rem;
       color: var(--primary);
-      text-shadow: 0 0 10px var(--primary);
-      animation: pulse 2s infinite;
+      animation: symbolPulse 2s infinite;
     }
 
-    @keyframes pulse {
-      0% { opacity: 0.7; }
-      50% { opacity: 1; }
-      100% { opacity: 0.7; }
+    @keyframes symbolPulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.1); opacity: 1; }
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
     }
 
-    .tagline {
-      font-size: 1.2rem;
-      color: var(--terminal);
-      margin-bottom: 1rem;
-      text-shadow: 0 0 5px var(--terminal);
+    .system-status {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
     }
 
-    .subtitle {
-      font-size: 1rem;
-      opacity: 0.8;
-      max-width: 600px;
-      margin: 0 auto;
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
     }
 
-    .card {
-      background-color: rgba(10, 10, 10, 0.8);
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+      animation: statusPulse 2s infinite;
+    }
+
+    @keyframes statusPulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .cyber-card {
+      background: rgba(10, 10, 10, 0.9);
+      border: 1px solid rgba(0, 255, 136, 0.3);
       border-radius: var(--border-radius);
       padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border: 1px solid rgba(0, 255, 136, 0.2);
-      box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
-      backdrop-filter: blur(5px);
+      position: relative;
+      overflow: hidden;
       transition: var(--transition);
+      backdrop-filter: blur(10px);
     }
 
-    .card:hover {
-      border-color: rgba(0, 255, 136, 0.4);
-      box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    .cyber-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+
+    .cyber-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+    }
+
+    .card-icon {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--primary);
     }
 
     .input-group {
       margin-bottom: 1.5rem;
     }
 
-    label {
+    .cyber-label {
       display: block;
       margin-bottom: 0.5rem;
       font-weight: 600;
       color: var(--primary);
+      text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
     }
 
-    .input-with-icon {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .input-with-icon i {
-      position: absolute;
-      right: 1rem;
-      color: var(--primary);
-    }
-
-    input {
+    .cyber-input {
       width: 100%;
-      padding: 0.8rem 3rem 0.8rem 1rem;
+      padding: 0.8rem 1rem;
       font-size: 1rem;
       border: 1px solid rgba(0, 255, 136, 0.3);
       border-radius: var(--border-radius);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: var(--text-dark);
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--terminal);
       transition: var(--transition);
       font-family: 'Courier New', monospace;
     }
 
-    input:focus {
+    .cyber-input:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
     }
 
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
+    .btn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 0.8rem;
       margin-bottom: 1.5rem;
     }
 
-    .btn {
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
+    .cyber-btn {
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
       font-weight: 600;
       border: none;
       border-radius: var(--border-radius);
@@ -207,60 +345,59 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      flex: 1;
-      min-width: 150px;
-      font-family: 'Courier New', monospace;
       text-transform: uppercase;
       letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cyber-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: var(--transition);
+    }
+
+    .cyber-btn:hover::before {
+      left: 100%;
     }
 
     .btn-primary {
-      background-color: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: var(--dark);
     }
 
     .btn-primary:hover {
-      background-color: var(--primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+      box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
     }
 
     .btn-secondary {
-      background-color: var(--secondary);
+      background: linear-gradient(135deg, var(--secondary), #7a1fd2);
       color: white;
     }
 
     .btn-secondary:hover {
-      background-color: #7a1fd2;
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+      box-shadow: 0 5px 20px rgba(138, 43, 226, 0.4);
     }
 
     .btn-accent {
-      background-color: var(--accent);
+      background: linear-gradient(135deg, var(--accent), #e00070);
       color: white;
     }
 
     .btn-accent:hover {
-      background-color: #e00070;
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 0, 128, 0.3);
-    }
-
-    .btn-outline {
-      background-color: transparent;
-      color: var(--primary);
-      border: 1px solid var(--primary);
-    }
-
-    .btn-outline:hover {
-      background-color: var(--primary);
-      color: var(--dark);
-      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(255, 0, 128, 0.4);
     }
 
     .result-container {
-      position: relative;
+      margin-top: 1rem;
     }
 
     .result-header {
@@ -268,86 +405,112 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(0, 255, 136, 0.2);
-      padding-bottom: 0.5rem;
     }
 
-    .count {
-      background-color: var(--primary);
+    .count-badge {
+      background: var(--primary);
       color: var(--dark);
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.8rem;
+      font-weight: bold;
     }
 
-    textarea {
+    .cyber-textarea {
       width: 100%;
-      min-height: 300px;
+      min-height: 200px;
       padding: 1rem;
-      font-size: 1rem;
+      font-size: 0.9rem;
       border: 1px solid rgba(0, 255, 136, 0.3);
       border-radius: var(--border-radius);
-      background-color: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.8);
       color: var(--terminal);
       resize: vertical;
-      transition: var(--transition);
       font-family: 'Courier New', monospace;
       line-height: 1.5;
     }
 
-    textarea:focus {
+    .cyber-textarea:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
     }
 
-    .footer {
+    .terminal-output {
+      background: #000;
+      border: 1px solid var(--terminal);
+      border-radius: var(--border-radius);
+      padding: 1rem;
+      min-height: 150px;
+      max-height: 300px;
+      overflow-y: auto;
+      font-family: 'Courier New', monospace;
+      color: var(--terminal);
+      margin-top: 1rem;
+    }
+
+    .terminal-line {
+      margin-bottom: 0.5rem;
+      animation: typewriter 0.1s ease-in-out;
+    }
+
+    @keyframes typewriter {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .terminal-prompt {
+      color: var(--primary);
+      margin-right: 0.5rem;
+    }
+
+    .terminal-command {
+      color: var(--terminal);
+    }
+
+    .terminal-result {
+      color: var(--cyber-blue);
+      margin-top: 0.5rem;
+    }
+
+    .system-footer {
       text-align: center;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
       border-top: 1px solid rgba(0, 255, 136, 0.2);
     }
 
-    .footer a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0.5rem 0;
-      transition: var(--transition);
-    }
-
-    .footer a:hover {
-      color: var(--terminal);
-      text-shadow: 0 0 5px var(--terminal);
-    }
-
-    .social-links {
+    .social-grid {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin: 1rem 0;
+      margin: 1.5rem 0;
     }
 
-    .social-links a {
+    .social-icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
-      background-color: rgba(0, 255, 136, 0.1);
+      background: rgba(0, 255, 136, 0.1);
       color: var(--primary);
       transition: var(--transition);
+      border: 1px solid rgba(0, 255, 136, 0.3);
     }
 
-    .social-links a:hover {
-      background-color: var(--primary);
+    .social-icon:hover {
+      background: var(--primary);
       color: var(--dark);
       transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+    }
+
+    .hacker-text {
+      font-family: 'Courier New', monospace;
+      color: var(--terminal);
+      text-shadow: 0 0 5px var(--terminal);
     }
 
     .notification {
@@ -355,25 +518,21 @@
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background-color: var(--primary);
+      background: var(--primary);
       color: var(--dark);
-      padding: 0.8rem 1.5rem;
+      padding: 1rem 2rem;
       border-radius: var(--border-radius);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
       transition: var(--transition);
       z-index: 1000;
       opacity: 0;
-      font-weight: 600;
+      font-weight: bold;
+      border: 1px solid rgba(0, 255, 136, 0.5);
     }
 
     .notification.show {
       transform: translateX(-50%) translateY(0);
       opacity: 1;
-    }
-
-    .notification.error {
-      background-color: var(--accent);
-      color: white;
     }
 
     .loader {
@@ -391,181 +550,233 @@
       to { transform: rotate(360deg); }
     }
 
-    .hacker-text {
-      font-family: 'Courier New', monospace;
-      color: var(--terminal);
-      text-shadow: 0 0 5px var(--terminal);
-    }
-
-    .typing-animation {
-      overflow: hidden;
-      border-right: 2px solid var(--terminal);
-      white-space: nowrap;
-      margin: 0 auto;
-      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: var(--terminal) }
-    }
-
     @media (max-width: 768px) {
-      .btn-group {
-        flex-direction: column;
-      }
-      
-      .btn {
-        width: 100%;
+      .tool-grid {
+        grid-template-columns: 1fr;
       }
       
       h1 {
         font-size: 2rem;
       }
       
-      .logo {
+      .logo-container {
         flex-direction: column;
-        gap: 0.5rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 0.5rem;
+        gap: 1rem;
       }
       
-      .card {
-        padding: 1rem;
-      }
-      
-      h1 {
-        font-size: 1.8rem;
+      .system-status {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="matrix-bg" id="matrixBg"></div>
+  <div class="cyber-grid"></div>
+  <div class="scan-line"></div>
   
   <div class="container">
-    <header>
-      <div class="logo">
-        <div class="logo-icon">
-          <i class="fas fa-terminal"></i>
-        </div>
-        <h1>RAJVET HACKING TOOLS</h1>
+    <header class="system-header">
+      <div class="logo-container">
+        <span class="hacker-symbols">𓊗𓊗𓊗</span>
+        <h1 class="glitch-text" data-text="RAJVET HACKING SUITE">RAJVET HACKING SUITE</h1>
+        <span class="hacker-symbols">𓊗𓊗𓊗</span>
       </div>
-      <p class="tagline typing-animation">Gmail Dot Trick Generator v2.0</p>
-      <p class="subtitle">أداة متقدمة لتوليد إيميلات Gmail باستخدام تقنية النقاط - إصدار راجفيت الحصري</p>
+      
+      <p class="tagline">𓂀 Gmail Dot Trick Generator v3.0 𓂀</p>
+      <p class="subtitle">نظام متقدم لتوليد الإيميلات - إصدار راجفيت الحصري</p>
+      
+      <div class="system-status">
+        <div class="status-item">
+          <div class="status-dot"></div>
+          <span>النظام: نشط</span>
+        </div>
+        <div class="status-item">
+          <div class="status-dot" style="background: var(--cyber-blue);"></div>
+          <span>الأمان: ممتاز</span>
+        </div>
+        <div class="status-item">
+          <div class="status-dot" style="background: var(--neon-pink);"></div>
+          <span>الأداء: مثالي</span>
+        </div>
+      </div>
     </header>
 
     <main>
-      <div class="card">
-        <div class="input-group">
-          <label for="username"><i class="fas fa-user-secret"></i> أدخل اسم المستخدم (بدون @gmail.com)</label>
-          <div class="input-with-icon">
-            <input type="text" id="username" placeholder="مثال: rajvet" autocomplete="off" />
-            <i class="fas fa-at"></i>
+      <div class="tool-grid">
+        <div class="cyber-card">
+          <div class="card-header">
+            <i class="fas fa-user-secret card-icon"></i>
+            <h3 class="card-title">𓂀 إدخال البيانات</h3>
+          </div>
+          
+          <div class="input-group">
+            <label class="cyber-label">𓃑 اسم المستخدم (بدون @gmail.com)</label>
+            <input type="text" id="username" class="cyber-input" placeholder="مثال: basim" autocomplete="off" />
+          </div>
+
+          <div class="btn-grid">
+            <button class="cyber-btn btn-primary" onclick="generateDots()">
+              <i class="fas fa-bolt"></i> توليد
+            </button>
+            <button class="cyber-btn btn-secondary" onclick="copyEmails()">
+              <i class="fas fa-copy"></i> نسخ
+            </button>
+            <button class="cyber-btn btn-accent" onclick="saveEmails()">
+              <i class="fas fa-download"></i> حفظ
+            </button>
+          </div>
+
+          <div class="loader" id="loader"></div>
+        </div>
+
+        <div class="cyber-card">
+          <div class="card-header">
+            <i class="fas fa-terminal card-icon"></i>
+            <h3 class="card-title">𓃭 نافذة الأوامر</h3>
+          </div>
+          
+          <div class="terminal-output" id="terminalOutput">
+            <div class="terminal-line">
+              <span class="terminal-prompt">root@rajvet:~#</span>
+              <span class="terminal-command">system_init</span>
+            </div>
+            <div class="terminal-result">
+              𓂀 نظام RAJVET HACKING SUITE جاهز للعمل<br>
+              𓃑 اكتب "help" لقائمة الأوامر
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <input type="text" id="terminalInput" class="cyber-input" placeholder="𓃭 اكتب الأمر هنا..." onkeypress="handleTerminalInput(event)" />
           </div>
         </div>
-
-        <div class="btn-group">
-          <button class="btn btn-primary" onclick="generateDots()">
-            <i class="fas fa-bolt"></i> توليد الإيميلات
-          </button>
-          <button class="btn btn-secondary" onclick="copyEmails()">
-            <i class="fas fa-copy"></i> نسخ الإيميلات
-          </button>
-          <button class="btn btn-accent" onclick="saveEmails()">
-            <i class="fas fa-download"></i> حفظ كملف
-          </button>
-          <button class="btn btn-outline" onclick="toggleTerminalMode()">
-            <i class="fas fa-terminal"></i> وضع التيرمينال
-          </button>
-        </div>
-
-        <div class="loader" id="loader"></div>
       </div>
 
-      <div class="card result-container">
-        <div class="result-header">
-          <h2><i class="fas fa-list-alt"></i> الإيميلات المولدة</h2>
-          <div class="count" id="count">0 إيميل</div>
+      <div class="cyber-card result-container">
+        <div class="card-header">
+          <i class="fas fa-list-alt card-icon"></i>
+          <h3 class="card-title">𓃬 النتائج المولدة</h3>
+          <div class="count-badge" id="count">0 𓃑</div>
         </div>
-        <textarea id="output" readonly placeholder="ستظهر الإيميلات المولدة هنا..."></textarea>
+        
+        <textarea id="output" class="cyber-textarea" readonly placeholder="𓂀 ستظهر الإيميلات المولدة هنا..."></textarea>
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="social-links">
-        <a href="https://t.me/Raaajvet" target="_blank" title="Telegram">
+    <footer class="system-footer">
+      <div class="social-grid">
+        <a href="https://t.me/Raaajvet" target="_blank" class="social-icon" title="Telegram">
           <i class="fab fa-telegram"></i>
         </a>
-        <a href="#" title="Twitter">
+        <a href="#" class="social-icon" title="Twitter">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="#" title="GitHub">
+        <a href="#" class="social-icon" title="GitHub">
           <i class="fab fa-github"></i>
         </a>
+        <a href="#" class="social-icon" title="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
       </div>
-      <a href="https://t.me/Raaajvet" target="_blank">
-        <i class="fab fa-telegram"></i> @Raaajvet - راسلني على تليجرام
+      
+      <a href="https://t.me/Raaajvet" target="_blank" class="hacker-text">
+        <i class="fab fa-telegram"></i> @Raaajvet - 𓃭 راسلني على تليجرام
       </a>
-      <p class="hacker-text">© 2025 RAJVET HACKING TOOLS - جميع الحقوق محفوظة</p>
+      <p class="hacker-text">𓊗 2025 RAJVET HACKING SUITE - جميع الحقوق محفوظة 𓊗</p>
     </footer>
   </div>
 
   <div class="notification" id="notification"></div>
 
   <script>
-    // Matrix background effect
-    function createMatrixBg() {
-      const bg = document.getElementById('matrixBg');
-      const chars = "01010101010101010101ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
-      const fontSize = 14;
-      const columns = Math.floor(window.innerWidth / fontSize);
-      const drops = Array(columns).fill(1);
-      
-      function draw() {
-        const ctx = document.createElement('canvas').getContext('2d');
-        ctx.canvas.width = window.innerWidth;
-        ctx.canvas.height = window.innerHeight;
-        bg.innerHTML = '';
-        bg.appendChild(ctx.canvas);
+    // Terminal functionality
+    function handleTerminalInput(event) {
+      if (event.key === 'Enter') {
+        const input = document.getElementById('terminalInput');
+        const command = input.value.trim();
+        input.value = '';
         
-        function rain() {
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-          ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-          
-          ctx.fillStyle = '#0f0';
-          ctx.font = `${fontSize}px monospace`;
-          
-          for (let i = 0; i < drops.length; i++) {
-            const text = chars[Math.floor(Math.random() * chars.length)];
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-            
-            if (drops[i] * fontSize > ctx.canvas.height && Math.random() > 0.975) {
-              drops[i] = 0;
-            }
-            drops[i]++;
-          }
+        if (command) {
+          runTerminalCommand(command);
         }
-        
-        setInterval(rain, 33);
       }
-      
-      draw();
-      window.addEventListener('resize', draw);
     }
 
-    // Initialize matrix background
-    createMatrixBg();
+    function runTerminalCommand(command) {
+      const output = document.getElementById('terminalOutput');
+      const promptLine = document.createElement('div');
+      promptLine.className = 'terminal-line';
+      promptLine.innerHTML = `<span class="terminal-prompt">root@rajvet:~#</span> <span class="terminal-command">${command}</span>`;
+      output.appendChild(promptLine);
+      
+      const result = document.createElement('div');
+      result.className = 'terminal-result';
+      
+      switch(command.toLowerCase()) {
+        case 'help':
+          result.innerHTML = `
+            <strong>𓃭 الأوامر المتاحة:</strong><br>
+            • help - عرض المساعدة<br>
+            • clear - تنظيف الشاشة<br>
+            • generate [username] - توليد إيميلات<br>
+            • status - حالة النظام<br>
+            • about - معلومات عن الأداة<br>
+            • scan - فحص النظام
+          `;
+          break;
+        case 'clear':
+          output.innerHTML = '';
+          return;
+        case 'status':
+          result.innerHTML = `
+            <strong>𓃑 حالة النظام:</strong><br>
+            • الذاكرة: 78% مستخدمة<br>
+            • المعالج: 45% حمل<br>
+            • الشبكة: نشط<br>
+            • الأداة: جاهزة للتشغيل<br>
+            • الأمان: مستوى عالي
+          `;
+          break;
+        case 'about':
+          result.innerHTML = `
+            <strong>𓊗 RAJVET HACKING SUITE</strong><br>
+            𓃑 الإصدار: 3.0<br>
+            𓃭 المطور: @Raaajvet<br>
+            𓃬 الوصف: نظام متقدم لتوليد الإيميلات<br>
+            𓂀 الرخصة: حصرية
+          `;
+          break;
+        case 'scan':
+          result.innerHTML = `
+            <strong>𓃭 فحص النظام:</strong><br>
+            𓃑 فحص الأمان: ✓ جيد<br>
+            𓃑 فحص الأداء: ✓ ممتاز<br>
+            𓃑 فحص الشبكة: ✓ نشط<br>
+            𓃑 جميع الأنظمة تعمل بشكل مثالي
+          `;
+          break;
+        default:
+          if (command.toLowerCase().startsWith('generate ')) {
+            const username = command.substring(9).trim();
+            if (username) {
+              document.getElementById('username').value = username;
+              generateDots();
+              result.innerHTML = `𓃑 جاري توليد إيميلات لـ: ${username}`;
+            } else {
+              result.innerHTML = '𓂀 خطأ: يرجى إدخال اسم مستخدم صحيح';
+            }
+          } else {
+            result.innerHTML = `𓂀 خطأ: الأمر "${command}" غير معروف. اكتب "help" للمساعدة.`;
+          }
+      }
+      
+      output.appendChild(result);
+      output.scrollTop = output.scrollHeight;
+    }
 
+    // Core functionality
     function generateDots() {
       const username = document.getElementById('username').value.replace(/\./g, '');
       const output = document.getElementById('output');
@@ -573,17 +784,15 @@
       const loader = document.getElementById('loader');
       
       output.value = '';
-      count.textContent = '0 إيميل';
+      count.textContent = '0 𓃑';
       
       if (!username || username.length < 2) {
-        showNotification('اكتب اسم مستخدم يحتوي على حرفين على الأقل', true);
+        showNotification('𓂀 اكتب اسم مستخدم يحتوي على حرفين على الأقل', true);
         return;
       }
       
-      // إظهار مؤشر التحميل
       loader.style.display = 'block';
       
-      // استخدام setTimeout لتجنب تجميد واجهة المستخدم
       setTimeout(() => {
         const result = new Set();
 
@@ -599,12 +808,23 @@
         backtrack('', 0);
         const list = Array.from(result).map(v => v + '@gmail.com');
         output.value = list.join('\n');
-        count.textContent = list.length + " إيميل";
+        count.textContent = list.length + " 𓃑";
         
-        // إخفاء مؤشر التحميل
         loader.style.display = 'none';
+        showNotification(`𓊗 تم توليد ${list.length} إيميل بنجاح`);
         
-        showNotification(`[RAJVET] تم توليد ${list.length} إيميل بنجاح`);
+        // Add to terminal
+        const terminalOutput = document.getElementById('terminalOutput');
+        const terminalLine = document.createElement('div');
+        terminalLine.className = 'terminal-line';
+        terminalLine.innerHTML = `<span class="terminal-prompt">root@rajvet:~#</span> <span class="terminal-command">generate_complete</span>`;
+        terminalOutput.appendChild(terminalLine);
+        
+        const terminalResult = document.createElement('div');
+        terminalResult.className = 'terminal-result';
+        terminalResult.innerHTML = `𓃑 تم توليد ${list.length} إيميل بنجاح لـ: ${username}`;
+        terminalOutput.appendChild(terminalResult);
+        terminalOutput.scrollTop = terminalOutput.scrollHeight;
       }, 100);
     }
 
@@ -612,7 +832,7 @@
       const output = document.getElementById('output');
       
       if (!output.value) {
-        showNotification('لا توجد إيميلات لنسخها', true);
+        showNotification('𓂀 لا توجد إيميلات لنسخها', true);
         return;
       }
       
@@ -621,12 +841,11 @@
       
       try {
         navigator.clipboard.writeText(output.value).then(() => {
-          showNotification('[RAJVET] تم نسخ الإيميلات بنجاح');
+          showNotification('𓊗 تم نسخ الإيميلات بنجاح');
         });
       } catch (err) {
-        // الطريقة القديمة للمتصفحات التي لا تدعم clipboard API
         document.execCommand('copy');
-        showNotification('[RAJVET] تم نسخ الإيميلات بنجاح');
+        showNotification('𓊗 تم نسخ الإيميلات بنجاح');
       }
     }
 
@@ -634,61 +853,19 @@
       const text = document.getElementById('output').value;
       
       if (!text) {
-        showNotification('لا توجد إيميلات لحفظها', true);
+        showNotification('𓂀 لا توجد إيميلات لحفظها', true);
         return;
       }
       
       const blob = new Blob([text], { type: 'text/plain' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'rajvet_emails.txt';
+      a.download = 'rajvet_hacking_emails.txt';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       
-      showNotification('[RAJVET] تم حفظ الإيميلات في ملف');
-    }
-
-    function toggleTerminalMode() {
-      document.body.classList.toggle('terminal-mode');
-      const cards = document.querySelectorAll('.card');
-      const inputs = document.querySelectorAll('input, textarea');
-      
-      if (document.body.classList.contains('terminal-mode')) {
-        document.body.style.backgroundColor = '#000';
-        document.body.style.backgroundImage = 'none';
-        document.body.style.color = '#0f0';
-        
-        cards.forEach(card => {
-          card.style.backgroundColor = '#000';
-          card.style.borderColor = '#0f0';
-        });
-        
-        inputs.forEach(input => {
-          input.style.backgroundColor = '#000';
-          input.style.color = '#0f0';
-          input.style.borderColor = '#0f0';
-        });
-        
-        showNotification('تم تفعيل وضع التيرمينال');
-      } else {
-        document.body.style.backgroundColor = '';
-        document.body.style.backgroundImage = '';
-        document.body.style.color = '';
-        
-        cards.forEach(card => {
-          card.style.backgroundColor = '';
-          card.style.borderColor = '';
-        });
-        
-        inputs.forEach(input => {
-          input.style.backgroundColor = '';
-          input.style.color = '';
-          input.style.borderColor = '';
-        });
-        
-        showNotification('تم تعطيل وضع التيرمينال');
-      }
+      showNotification('𓊗 تم حفظ الإيميلات في ملف');
     }
 
     function showNotification(message, isError = false) {
@@ -702,16 +879,20 @@
       }, 3000);
     }
 
-    // تحميل تفضيلات المستخدم
+    // Initialize
     document.addEventListener('DOMContentLoaded', function() {
-      // التركيز على حقل الإدخال عند تحميل الصفحة
       document.getElementById('username').focus();
       
-      // إضافة تأثير كتابة للنص الترحيبي
-      const tagline = document.querySelector('.tagline');
-      tagline.classList.add('typing-animation');
+      // Add initial terminal message
+      setTimeout(() => {
+        const terminalOutput = document.getElementById('terminalOutput');
+        const welcomeMsg = document.createElement('div');
+        welcomeMsg.className = 'terminal-result';
+        welcomeMsg.innerHTML = '𓂀 النظام جاهز للاستخدام. ابدأ بإدخال اسم المستخدم أو استخدم نافذة الأوامر.';
+        terminalOutput.appendChild(welcomeMsg);
+        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+      }, 1000);
     });
   </script>
 </body>
-
 </html>
