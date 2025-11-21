@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | 404 Error</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --colorRgbFacetsTeal600: 2 128 125;
+            --colorTealAction: var(--colorRgbFacetsTeal600);
+            --colorRgbFacetsNeutralLight200: 233 235 237;
+            --colorHr: var(--colorRgbFacetsNeutralLight200);
+            --colorRgbFacetsNeutralLight700: 53 58 62;
+            --colorGrayDarkest: var(--colorRgbFacetsNeutralLight700);
+            --colorGrayLighter: var(--colorRgbFacetsNeutralLight200);
+            --colorText: var(--colorGrayDarkest);
+            --effectShadowLightShallow: 0 1px 10px 0 rgb(53 58 62 / 6%),
+                0 2px 4px 0 rgb(53 58 62 / 8%);
+            --colorRgbFacetsNeutralDark900: 6 11 16;
+            --primary-gradient: linear-gradient(135deg, rgb(var(--colorTealAction)), #1a6d6b);
+            --animation-duration: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+                "Segoe UI Emoji", "Segoe UI Symbol";
+            background: white;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            color: rgb(var(--colorText));
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: rgb(var(--colorRgbFacetsNeutralDark900));
+                color: white;
+            }
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+            background: 
+                radial-gradient(circle at 20% 80%, rgb(var(--colorTealAction)) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgb(var(--colorTealAction)) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .header {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all var(--animation-duration);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            line-height: 1;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card {
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--effectShadowLightShallow);
+            border: 1px solid rgb(var(--colorGrayLighter));
+            transition: transform var(--animation-duration), box-shadow var(--animation-duration);
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-gradient);
+        }
+
+        h1 {
+            margin: 0 0 1rem 0;
+            font-size: 1.75rem;
+            line-height: 1.2;
+            color: rgb(var(--colorText));
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: rgb(var(--colorText));
+            opacity: 0.8;
+        }
+
+        a {
+            font-weight: 600;
+            color: rgb(var(--colorTealAction));
+            text-decoration-skip-ink: all;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            text-decoration-color: rgb(var(--colorTealAction) / 0.5);
+            transition: all var(--animation-duration);
+        }
+
+        a:hover,
+        a:focus-visible {
+            text-decoration-color: rgb(var(--colorTealAction));
+            color: #1a6d6b;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--animation-duration);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(2, 128, 125, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(2, 128, 125, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: rgb(var(--colorTealAction));
+            border-color: rgb(var(--colorTealAction));
+        }
+
+        .btn-secondary:hover {
+            background: rgba(2, 128, 125, 0.1);
+            transform: translateY(-2px);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: rgb(var(--colorHr));
+            margin: 1.5rem 0;
+        }
+
+        .your-site {
+            font-size: 0.875rem;
+            color: rgb(var(--colorText));
+            opacity: 0.7;
+        }
+
+        .search-box {
+            margin: 2rem 0;
+            position: relative;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 3rem;
+            border: 1px solid rgb(var(--colorGrayLighter));
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all var(--animation-duration);
+            background: white;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: rgb(var(--colorTealAction));
+            box-shadow: 0 0 0 3px rgba(2, 128, 125, 0.1);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(var(--colorTealAction));
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgb(var(--colorTealAction));
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: float-element 15s infinite linear;
+        }
+
+        @keyframes float-element {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+
+        .footer {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: rgb(var(--colorGrayLighter));
+            color: rgb(var(--colorText));
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgb(var(--colorTealAction));
+            color: white;
+            text-decoration: none;
+            transition: all var(--animation-duration);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(2, 128, 125, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            .card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 4rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Dark mode enhancements */
+        @media (prefers-color-scheme: dark) {
+            .card {
+                background: rgb(30, 35, 40);
+                border-color: rgb(50, 55, 60);
+            }
+            
+            .search-box input {
+                background: rgb(40, 45, 50);
+                border-color: rgb(60, 65, 70);
+                color: white;
+            }
+            
+            .footer {
+                background: rgb(20, 25, 30);
+            }
+            
+            h1, p, .your-site {
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span>YourBrand</span>
+        </div>
+        <nav class="nav">
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-info-circle"></i> About</a>
+            <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="#"><i class="fas fa-shield-alt"></i> Services</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="error-code">404</div>
+        
+        <div class="card">
+            <h1>Page Not Found</h1>
+            <p>
+                Looks like you've followed a broken link or entered a URL that doesn't exist on this site.
+            </p>
+            
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search our site...">
+            </div>
+            
+            <div class="action-buttons">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Back to Homepage
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Go Back
+                </a>
+            </div>
+            
+            <hr />
+            
+            <p class="your-site">
+                If this is your site, and you weren't expecting a 404 for this path,
+                please visit Netlify's
+                <a href="https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking">
+                    "page not found" support guide
+                </a>
+                for troubleshooting tips.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2023 YourBrand. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Create floating elements
+        function createFloatingElements() {
+            const container = document.getElementById('floatingElements');
+            const colors = ['2 128 125', '53 58 62', '233 235 237'];
+            const sizes = [20, 30, 40, 50];
+            
+            for (let i = 0; i < 15; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                const size = sizes[Math.floor(Math.random() * sizes.length)];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                element.style.background = `rgb(${color})`;
+                element.style.left = `${Math.random() * 100}vw`;
+                element.style.animationDuration = `${15 + Math.random() * 20}s`;
+                element.style.animationDelay = `${Math.random() * 5}s`;
+                
+                container.appendChild(element);
+            }
+        }
+        
+        // Search functionality
+        document.querySelector('.search-box input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = this.value.trim();
+                if (query) {
+                    alert(`Searching for: ${query}\n(This is a demo - real search would redirect)`);
+                    // In a real implementation, you would redirect to search results
+                    // window.location.href = `/search?q=${encodeURIComponent(query)}`;
+                }
+            }
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingElements();
+        });
+    </script>
+</body>
+</html>
